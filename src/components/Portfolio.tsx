@@ -45,7 +45,7 @@ export default function Perfil() {
                         <div className="bg-gray-800 rounded-lg border border-transparent shadow-sm p-6">
                             <div className="w-48 h-48 rounded-full overflow-hidden bg-gradient-to-b from-gray-700 to-gray-800 mx-auto mb-6">
                                 <img
-                                    src="/assets/profile.webp"
+                                    src="/profile.webp"
                                     alt="Foto de Johann Gaviria"
                                     width={192}
                                     height={192}
@@ -60,7 +60,7 @@ export default function Perfil() {
                             {/* Enlaces de redes sociales */}
                             <div className="flex gap-4 justify-start mb-6">
                                 <a
-                                    href="/assets/CV-JohannGaviria.pdf"
+                                    href="/CV-JohannGaviria.pdf"
                                     className="text-gray-400 hover:text-white transition-colors"
                                     download
                                 >

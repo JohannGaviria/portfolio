@@ -26,7 +26,7 @@ export const projectsData: Project[] = [
 export const workExperienceData: WorkExperience[] = [
     {
         company: "NoCountry.tech",
-        logo: "/assets/nocountry.svg",
+        logo: "/nocountry.svg",
         position: "Desarrollador Backend",
         period: "Sep 2024 - Nov 2024",
         description: "Participé en la creación de un MVP para una plataforma de cursos online, implementando gestión de usuarios, cursos e integración de pagos, desarrollando la lógica de negocio y endpoints necesarios."
