@@ -9,6 +9,9 @@ export interface Project {
     tech: Tech[];
     githubLink?: string;
     deployLink?: string;
+    createdAt: Date;
+    isCollaborative: boolean;
+    role: string;
 }
 
 export interface WorkExperience {
@@ -24,4 +27,9 @@ export interface Education {
     institution: string;
     period: string;
     description?: string;
+}
+
+export interface Skill {
+    name: string;
+    color: string;
 }

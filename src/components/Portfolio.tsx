@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, ExternalLink, Calendar, Download } from 'lucide-react';
+import { Github, Linkedin, ExternalLink, Calendar, Download, Flame, X } from 'lucide-react';
 import { projectsData, workExperienceData, educationData, skillsData } from '../data/index';
+import { Project } from '../interfaces/types';
 
 export default function Perfil() {
     const [techIndexes, setTechIndexes] = useState<number[]>(
         projectsData.map(() => 0) // Inicializa el índice de tecnología a 0 para cada proyecto
     );
     const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
     // Cambio de tecnología para cada proyecto cada 3 segundos
     useEffect(() => {
@@ -17,7 +19,7 @@ export default function Perfil() {
                     return (index + 1) % projectTechCount; // Reinicia el índice cuando llega al final
                 })
             );
-        }, 3000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -29,12 +31,29 @@ export default function Perfil() {
         );
     };
 
+    const getSkillColor = (skill: string): string => {
+        for (const skillData of skillsData) {
+            if (skillData.name === skill) {
+                return skillData.color;
+            }
+        }
+        return 'bg-gray-700';
+    };
+
     // Filtrar proyectos según las habilidades seleccionadas
     const filteredProjects = selectedSkills.length
         ? projectsData.filter((project) =>
             project.tech.some((tech) => selectedSkills.includes(tech.name))
         )
         : projectsData;
+
+    // Determinar si un proyecto es nuevo (creado en los últimos 30 días)
+    const isNewProject = (createdAt: Date) => {
+        const now = new Date();
+        const diffTime = Math.abs(now.getTime() - new Date(createdAt).getTime());
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        return diffDays <= 30;
+    };
 
     return (
         <div className="min-h-screen bg-gray-900 text-gray-200">
@@ -90,14 +109,14 @@ export default function Perfil() {
                                 <div className="flex flex-wrap gap-2">
                                     {skillsData.map((skill) => (
                                         <span
-                                            key={skill}
-                                            onClick={() => handleSkillClick(skill)}
-                                            className={`cursor-pointer px-3 py-1 rounded-md text-sm ${selectedSkills.includes(skill)
-                                                ? 'bg-blue-600 text-white'
+                                            key={skill.name}
+                                            onClick={() => handleSkillClick(skill.name)}
+                                            className={`cursor-pointer px-3 py-1 rounded-md text-sm ${selectedSkills.includes(skill.name)
+                                                ? getSkillColor(skill.name)
                                                 : 'bg-gray-700 text-gray-300'
                                                 }`}
                                         >
-                                            {skill}
+                                            {skill.name}
                                         </span>
                                     ))}
                                 </div>
@@ -114,7 +133,10 @@ export default function Perfil() {
                             ) : (
                                 <div className="grid md:grid-cols-2 gap-6">
                                     {filteredProjects.map((project, projectIndex) => (
-                                        <div key={project.title} className="rounded-lg bg-gray-800 p-6 min-h-full">
+                                        <div key={project.title} className="relative rounded-lg bg-gray-800 p-6 min-h-full cursor-pointer" onClick={() => setSelectedProject(project)}>
+                                            {isNewProject(project.createdAt) && (
+                                                <Flame size={24} className="absolute top-2 right-2 text-red-500" />
+                                            )}
                                             <h3 className="text-xl font-semibold mb-2 text-white">{project.title}</h3>
                                             <p className="text-gray-400 mb-4 line-clamp-3">{project.description}</p>
                                             <div className="flex items-center justify-between">
@@ -222,6 +244,52 @@ export default function Perfil() {
                     </div>
                 </div>
             </main>
+
+            {/* Modal */}
+            {selectedProject && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-gray-800 rounded-lg p-6 w-11/12 md:w-2/3 lg:w-1/2">
+                        <div className="flex justify-between items-center mb-4">
+                            <h2 className="text-2xl font-bold text-white">{selectedProject.title}</h2>
+                            <button onClick={() => setSelectedProject(null)} className="text-gray-400 hover:text-white transition-colors">
+                                <X size={24} />
+                            </button>
+                        </div>
+                        <p className="text-gray-400 mb-4">{selectedProject.description}</p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {selectedProject.tech.map((tech) => (
+                                <span key={tech.name} className={`px-3 py-1 rounded-md text-sm ${tech.color}`}>
+                                    {tech.name}
+                                </span>
+                            ))}
+                        </div>
+                        <p className="text-gray-400 mb-4"><strong>Rol:</strong> {selectedProject.role}</p>
+                        <p className="text-gray-400 mb-4"><strong>Tipo de Proyecto:</strong> {selectedProject.isCollaborative ? 'Colaborativo' : 'Personal'}</p>
+                        <div className="flex gap-3">
+                            {selectedProject.githubLink && (
+                                <a
+                                    href={selectedProject.githubLink}
+                                    className="text-gray-400 hover:text-white transition-colors"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Github size={20} />
+                                </a>
+                            )}
+                            {selectedProject.deployLink && (
+                                <a
+                                    href={selectedProject.deployLink}
+                                    className="text-gray-400 hover:text-white transition-colors"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <ExternalLink size={20} />
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
