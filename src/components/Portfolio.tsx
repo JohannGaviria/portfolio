@@ -58,6 +58,12 @@ export default function Perfil() {
         return diffDays <= 30;
     };
 
+    // Maneja el clic en los enlaces de los proyectos para evitar que el modal se abra
+    const handleProjectLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, project: Project) => {
+        e.stopPropagation();
+        setSelectedProject(null);
+    };
+
     return (
         <div className="min-h-screen bg-background text-text">
             <main className="max-w-7xl mx-auto px-8 py-12">
@@ -93,9 +99,6 @@ export default function Perfil() {
                                 </a>
                                 <a href="https://linkedin.com/in/johanngaviria" className="text-iconsSocial hover:text-iconsSocialHover transition-colors" target='_blank'>
                                     <Linkedin size={24} />
-                                </a>
-                                <a href="https://dev.to/johanngaviria" className="text-iconsSocial hover:text-iconsSocialHover transition-colors" target='_blank'>
-                                    <ExternalLink size={24} />
                                 </a>
                             </div>
                             {/* Botón de contacto */}
@@ -154,6 +157,7 @@ export default function Perfil() {
                                                             className="text-iconsSocial hover:text-iconsSocialHover transition-colors"
                                                             target="_blank"
                                                             rel="noopener noreferrer"
+                                                            onClick={(e) => handleProjectLinkClick(e, project)}
                                                         >
                                                             <Github size={20} />
                                                         </a>
@@ -164,6 +168,7 @@ export default function Perfil() {
                                                             className="text-iconsSocial hover:text-iconsSocialHover transition-colors"
                                                             target="_blank"
                                                             rel="noopener noreferrer"
+                                                            onClick={(e) => handleProjectLinkClick(e, project)}
                                                         >
                                                             <ExternalLink size={20} />
                                                         </a>
@@ -190,7 +195,7 @@ export default function Perfil() {
                                         />
                                         <div className="flex flex-col">
                                             <h3 className="text-xl font-semibold text-subtitle-max">{work.position}</h3>
-                                            <p className="text-subtitle-min">{work.company}</p>
+                                            <a href='https://www.nocountry.tech/' target='blank' className="text-subtitle-min">{work.company}</a>
                                         </div>
                                     </div>
                                     <div className="mt-4">
@@ -270,6 +275,7 @@ export default function Perfil() {
                                     className="text-iconsSocial hover:text-iconsSocialHover transition-colors"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    onClick={(e) => handleProjectLinkClick(e, selectedProject)}
                                 >
                                     <Github size={24} />
                                 </a>
@@ -280,6 +286,7 @@ export default function Perfil() {
                                     className="text-iconsSocial hover:text-iconsSocialHover transition-colors"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    onClick={(e) => handleProjectLinkClick(e, selectedProject)}
                                 >
                                     <ExternalLink size={24} />
                                 </a>

@@ -3,22 +3,41 @@ import { Project, WorkExperience, Education, Skill } from '../interfaces/types';
 // Definir los datos de los proyectos
 export const projectsData: Project[] = [
     {
+        title: "Miniature Adventure",
+        description: "Desarrollo de una API REST para la gestión de ofertas de trabajo entre estudiantes y empresas, permite a los usuarios, ya sean estudiantes o empresas, registrarse y utilizar la plataforma. Las empresas tienen la capacidad de crear, gestionar y eliminar ofertas de trabajo. Por otro lado, los estudiantes pueden visualizar ofertas disponibles y postularse a las ofertas de su preferencia.",
+        tech: [
+            { "name": "Python", "color": "bg-tech-python" },
+            { "name": "Django", "color": "bg-tech-django" },
+            { "name": "PostgreSQL", "color": "bg-tech-postgresql" },
+            { "name": "JWT", "color": "bg-tech-jwt" },
+            { "name": "Docker", "color": "bg-tech-docker" },
+            { "name": "GIT", "color": "bg-tech-git" },
+            { "name": "GitHub", "color": "bg-tech-github" },
+            { "name": "Postman", "color": "bg-tech-postman" },
+            { "name": "Testing", "color": "bg-tech-testing" },
+            { "name": "RestAPI", "color": "bg-tech-restapi" },
+        ],
+        githubLink: "https://github.com/JohannGaviria/miniature-adventure",
+        createdAt: new Date('2025-01-23'),
+        isCollaborative: false,
+        role: "Desarrollador Principal"
+    },
+    {
         title: "Shiny Umbrella",
         description: "Desarrollo de una API REST que permite a los usuarios crear y participar en encuestas. Ofrece gestión de perfiles, visualización de resultados y notificaciones sobre la actividad de las encuestas, facilitando la recopilación de datos para la toma de decisiones.",
         tech: [
             { "name": "Python", "color": "bg-tech-python" },
             { "name": "Django", "color": "bg-tech-django" },
             { "name": "PostgreSQL", "color": "bg-tech-postgresql" },
-            { "name": "SQLite", "color": "bg-tech-sqlite" },
             { "name": "JWT", "color": "bg-tech-jwt" },
             { "name": "Docker", "color": "bg-tech-docker" },
             { "name": "GIT", "color": "bg-tech-git" },
             { "name": "GitHub", "color": "bg-tech-github" },
             { "name": "Postman", "color": "bg-tech-postman" },
-            { "name": "Testing", "color": "bg-tech-testing" }
+            { "name": "Testing", "color": "bg-tech-testing" },
+            { "name": "RestAPI", "color": "bg-tech-restapi" },
         ],        
         githubLink: "https://github.com/JohannGaviria/shiny-umbrella",
-        deployLink: "https://shiny-umbrella-production.up.railway.app/",
         createdAt: new Date('2024-12-09'),
         isCollaborative: false,
         role: "Desarrollador Principal"
@@ -34,6 +53,7 @@ export const projectsData: Project[] = [
             { "name": "Docker", "color": "bg-tech-docker" },
             { "name": "GIT", "color": "bg-tech-git" },
             { "name": "GitHub", "color": "bg-tech-github" },
+            { "name": "RestAPI", "color": "bg-tech-restapi" },
             { "name": "JavaScript", "color": "bg-tech-javascript" },
             { "name": "React", "color": "bg-tech-react" },
             { "name": "NodeJS", "color": "bg-tech-nodejs" }
@@ -86,4 +106,5 @@ export const skillsData: Skill[] = [
     {name: "Postman", color: "bg-tech-postman"},
     {name: "Testing", color: "bg-tech-testing"},
     {name: "JWT", color: "bg-tech-jwt"},
+    {name: "RestAPI", color: "bg-tech-restapi"}
 ];
