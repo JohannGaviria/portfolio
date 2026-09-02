@@ -3,6 +3,34 @@ import { Project, WorkExperience, Education, Skill } from '../interfaces/types';
 // Definir los datos de los proyectos
 export const projectsData: Project[] = [
     {
+        title: "Verbose Potato",
+        description: "API REST para la gestión de una biblioteca, enfocada en la aplicación práctica de Arquitectura Hexagonal (Ports & Adapters) y un Monolito Modular orientado al dominio. Permite administrar usuarios, catálogo de libros y préstamos, aplicando reglas de negocio estrictas para garantizar la disponibilidad de ejemplares, el control de roles y la consistencia de los datos. Incluye una suite de pruebas automatizadas con integración continua (CI/CD) para asegurar la calidad del código.",
+        tech: [
+            { "name": "Python", "color": "bg-tech-python" },
+            { "name": "FastAPI", "color": "bg-tech-fastapi" },
+            { "name": "PostgreSQL", "color": "bg-tech-postgresql" },
+            { "name": "Redis", "color": "bg-tech-redis" },
+            { "name": "SQLAlchemy", "color": "bg-tech-sqlalchemy" },
+            { "name": "Alembic", "color": "bg-tech-alembic" },
+            { "name": "Pydantic", "color": "bg-tech-pydantic" },
+            { "name": "Docker", "color": "bg-tech-docker" },
+            { "name": "Docker Compose", "color": "bg-tech-docker" },
+            { "name": "Pytest", "color": "bg-tech-pytest" },
+            { "name": "GitHub Actions", "color": "bg-tech-githubactions" },
+            { "name": "Structlog", "color": "bg-tech-structlog" },
+            { "name": "Arquitectura Hexagonal (Ports & Adapters)", "color": "bg-tech-hexagonal" },
+            { "name": "Domain-Driven Design (DDD)", "color": "bg-tech-ddd" },
+            { "name": "CI/CD", "color": "bg-tech-githubactions" },
+            { "name": "Ruff", "color": "bg-tech-ruff" },
+            { "name": "Mypy", "color": "bg-tech-mypy" },
+            { "name": "Swagger / OpenAPI", "color": "bg-tech-swagger" }
+        ],
+        githubLink: "https://github.com/JohannGaviria/verbose-potato",
+        createdAt: new Date('2026-09-01'),
+        isCollaborative: false,
+        role: "Backend Developer"
+    },
+    {
         title: "Miniature Adventure",
         description: "Desarrollo de una API REST para la gestión de ofertas de trabajo entre estudiantes y empresas, permite a los usuarios, ya sean estudiantes o empresas, registrarse y utilizar la plataforma. Las empresas tienen la capacidad de crear, gestionar y eliminar ofertas de trabajo. Por otro lado, los estudiantes pueden visualizar ofertas disponibles y postularse a las ofertas de su preferencia.",
         tech: [
@@ -11,11 +39,13 @@ export const projectsData: Project[] = [
             { "name": "PostgreSQL", "color": "bg-tech-postgresql" },
             { "name": "JWT", "color": "bg-tech-jwt" },
             { "name": "Docker", "color": "bg-tech-docker" },
+            { "name": "Docker Compose", "color": "bg-tech-docker" },
             { "name": "GIT", "color": "bg-tech-git" },
             { "name": "GitHub", "color": "bg-tech-github" },
             { "name": "Postman", "color": "bg-tech-postman" },
             { "name": "Testing", "color": "bg-tech-testing" },
-            { "name": "RestAPI", "color": "bg-tech-restapi" },
+            { "name": "APIs RESTful", "color": "bg-tech-restapi" },
+            { "name": "Django REST Framework (DRF)", "color": "bg-tech-drf" },
         ],
         githubLink: "https://github.com/JohannGaviria/miniature-adventure",
         createdAt: new Date('2025-01-23'),
@@ -31,12 +61,14 @@ export const projectsData: Project[] = [
             { "name": "PostgreSQL", "color": "bg-tech-postgresql" },
             { "name": "JWT", "color": "bg-tech-jwt" },
             { "name": "Docker", "color": "bg-tech-docker" },
+            { "name": "Docker Compose", "color": "bg-tech-docker" },
             { "name": "GIT", "color": "bg-tech-git" },
             { "name": "GitHub", "color": "bg-tech-github" },
             { "name": "Postman", "color": "bg-tech-postman" },
             { "name": "Testing", "color": "bg-tech-testing" },
-            { "name": "RestAPI", "color": "bg-tech-restapi" },
-        ],        
+            { "name": "APIs RESTful", "color": "bg-tech-restapi" },
+            { "name": "Django REST Framework (DRF)", "color": "bg-tech-drf" },
+        ],
         githubLink: "https://github.com/JohannGaviria/shiny-umbrella",
         createdAt: new Date('2024-12-09'),
         isCollaborative: false,
@@ -48,18 +80,19 @@ export const projectsData: Project[] = [
         tech: [
             { "name": "Python", "color": "bg-tech-python" },
             { "name": "Django", "color": "bg-tech-django" },
-            { "name": "PostgreSQL", "color": "bg-tech-postgrsql" },
+            { "name": "PostgreSQL", "color": "bg-tech-postgresql" },
             { "name": "JWT", "color": "bg-tech-jwt" },
             { "name": "Docker", "color": "bg-tech-docker" },
+            { "name": "Docker Compose", "color": "bg-tech-docker" },
             { "name": "GIT", "color": "bg-tech-git" },
             { "name": "GitHub", "color": "bg-tech-github" },
-            { "name": "RestAPI", "color": "bg-tech-restapi" },
+            { "name": "APIs RESTful", "color": "bg-tech-restapi" },
+            { "name": "Django REST Framework (DRF)", "color": "bg-tech-drf" },
             { "name": "JavaScript", "color": "bg-tech-javascript" },
             { "name": "React", "color": "bg-tech-react" },
             { "name": "NodeJS", "color": "bg-tech-nodejs" }
         ],        
         githubLink: "https://github.com/Daniheto/No-Country-Back-End",
-        deployLink: "https://boisterous-cocada-c1efb2.netlify.app/",
         createdAt: new Date('2024-10-31'),
         isCollaborative: true,
         role: "Desarrollador Backend"
@@ -73,7 +106,7 @@ export const workExperienceData: WorkExperience[] = [
         logo: "/nocountry.svg",
         position: "Desarrollador Backend",
         period: "Sep 2024 - Nov 2024",
-        description: "Participé en la creación de un MVP para una plataforma de cursos online, implementando gestión de usuarios, cursos e integración de pagos, desarrollando la lógica de negocio y endpoints necesarios."
+        description: "Participé en un equipo multidisciplinario en el desarrollo de ProfeVirtual, un MVP para una plataforma de cursos online. Implementé la gestión de usuarios, el catálogo de cursos y los endpoints RESTful necesarios para la lógica de negocio."
     }
 ];
 
@@ -94,17 +127,27 @@ export const educationData: Education[] = [
 // Definir los datos de las habilidades
 export const skillsData: Skill[] = [
     {name: "Python", color: "bg-tech-python"},
+    {name: "FastAPI", color: "bg-tech-fastapi"},
     {name: "Django", color: "bg-tech-django"},
-    {name: "Flask", color: "bg-tech-flask"},
+    {name: "Django REST Framework (DRF)", color: "bg-tech-drf"},
+    {name: "Pydantic", color: "bg-tech-pydantic"},
+    {name: "Arquitectura Hexagonal (Ports & Adapters)", color: "bg-tech-hexagonal"},
+    {name: "Domain-Driven Design (DDD)", color: "bg-tech-ddd"},
+    {name: "APIs RESTful", color: "bg-tech-restapi"},
+    {name: "Swagger / OpenAPI", color: "bg-tech-swagger"},
     {name: "PostgreSQL", color: "bg-tech-postgresql"},
-    {name: "MySQL", color: "bg-tech-mysql"},
-    {name: "MongoDB", color: "bg-tech-mongodb"},
-    {name: "SQLite", color: "bg-tech-sqlite"},
+    {name: "Redis", color: "bg-tech-redis"},
+    {name: "SQLAlchemy", color: "bg-tech-sqlalchemy"},
+    {name: "Alembic", color: "bg-tech-alembic"},
+    {name: "Pytest (Unitarias, Integración, E2E)", color: "bg-tech-pytest"},
+    {name: "Ruff", color: "bg-tech-ruff"},
+    {name: "Mypy", color: "bg-tech-mypy"},
+    {name: "Structlog", color: "bg-tech-structlog"},
     {name: "Docker", color: "bg-tech-docker"},
-    {name: "GIT", color: "bg-tech-git"},
-    {name: "GitHub", color: "bg-tech-github"},
-    {name: "Postman", color: "bg-tech-postman"},
-    {name: "Testing", color: "bg-tech-testing"},
+    {name: "Docker Compose", color: "bg-tech-docker"},
+    {name: "GitHub Actions", color: "bg-tech-githubactions"},
+    {name: "CI/CD", color: "bg-tech-githubactions"},
+    {name: "Git & GitHub", color: "bg-tech-git"},
     {name: "JWT", color: "bg-tech-jwt"},
-    {name: "RestAPI", color: "bg-tech-restapi"}
+    {name: "Postman", color: "bg-tech-postman"}
 ];
