@@ -95,7 +95,7 @@ export const projectsData: Project[] = [
         githubLink: "https://github.com/Daniheto/No-Country-Back-End",
         createdAt: new Date('2024-10-31'),
         isCollaborative: true,
-        role: "Desarrollador Backend"
+        role: "Desarrollador Backend Junior"
     }
 ];
 
@@ -104,7 +104,7 @@ export const workExperienceData: WorkExperience[] = [
     {
         company: "NoCountry.tech",
         logo: "/nocountry.svg",
-        position: "Desarrollador Backend",
+        position: "Desarrollador Backend Junior",
         period: "Sep 2024 - Nov 2024",
         description: "Participé en un equipo multidisciplinario en el desarrollo de ProfeVirtual, un MVP para una plataforma de cursos online. Implementé la gestión de usuarios, el catálogo de cursos y los endpoints RESTful necesarios para la lógica de negocio."
     }

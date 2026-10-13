@@ -115,7 +115,7 @@ export default function Perfil() {
                                     </div>
                                 </div>
                                 <h1 className="text-2xl font-bold text-title">Johann Gaviria</h1>
-                                <p className="font-medium text-accent">Desarrollador Backend</p>
+                                <p className="font-medium text-accent">Desarrollador Backend Junior</p>
                             </div>
                             <p className="text-text text-sm leading-relaxed mb-6">
                                 Especializado en el ecosistema Python (FastAPI, Django) y bases de datos PostgreSQL. Me enfoco en el desarrollo de APIs RESTful escalables aplicando principios de arquitectura limpia y buenas prácticas de diseño. Apasionado por la calidad de código mediante pruebas automatizadas con Pytest y el despliegue con Docker.
