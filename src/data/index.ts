@@ -4,7 +4,7 @@ import { Project, WorkExperience, Education, Skill } from '../interfaces/types';
 export const projectsData: Project[] = [
     {
         title: "Verbose Potato",
-        description: "API REST para la gestión de una biblioteca, enfocada en la aplicación práctica de Arquitectura Hexagonal (Ports & Adapters) y un Monolito Modular orientado al dominio. Permite administrar usuarios, catálogo de libros y préstamos, aplicando reglas de negocio estrictas para garantizar la disponibilidad de ejemplares, el control de roles y la consistencia de los datos. Incluye una suite de pruebas automatizadas con integración continua (CI/CD) para asegurar la calidad del código.",
+        description: "API REST para la gestión de una biblioteca (usuarios, catálogo de libros y préstamos), enfocada en la aplicación práctica de Arquitectura Hexagonal (Ports & Adapters) y DDD sobre un monolito modular. Aplica reglas de negocio estrictas para garantizar la disponibilidad de ejemplares, el control de roles y la consistencia de los datos. Incluye autenticación con JWT, caché con Redis, más del 70 % de cobertura con pruebas unitarias, de integración y E2E, y un pipeline de CI/CD con GitHub Actions que publica la imagen en Docker Hub. Desarrollado con metodología Kanban.",
         tech: [
             { "name": "Python", "color": "bg-tech-python" },
             { "name": "FastAPI", "color": "bg-tech-fastapi" },
@@ -23,7 +23,8 @@ export const projectsData: Project[] = [
             { "name": "CI/CD", "color": "bg-tech-githubactions" },
             { "name": "Ruff", "color": "bg-tech-ruff" },
             { "name": "Mypy", "color": "bg-tech-mypy" },
-            { "name": "Swagger / OpenAPI", "color": "bg-tech-swagger" }
+            { "name": "Swagger / OpenAPI", "color": "bg-tech-swagger" },
+            { "name": "Kanban", "color": "bg-tech-kanban" }
         ],
         githubLink: "https://github.com/JohannGaviria/verbose-potato",
         createdAt: new Date('2026-09-01'),
@@ -32,7 +33,7 @@ export const projectsData: Project[] = [
     },
     {
         title: "Miniature Adventure",
-        description: "Desarrollo de una API REST para la gestión de ofertas de trabajo entre estudiantes y empresas, permite a los usuarios, ya sean estudiantes o empresas, registrarse y utilizar la plataforma. Las empresas tienen la capacidad de crear, gestionar y eliminar ofertas de trabajo. Por otro lado, los estudiantes pueden visualizar ofertas disponibles y postularse a las ofertas de su preferencia.",
+        description: "API REST con Django que conecta estudiantes y empresas con control de acceso por roles: las empresas crean y gestionan ofertas de trabajo, y los estudiantes consultan las ofertas disponibles y se postulan. Contenerizada con Docker y con pruebas automatizadas.",
         tech: [
             { "name": "Python", "color": "bg-tech-python" },
             { "name": "Django", "color": "bg-tech-django" },
@@ -54,7 +55,7 @@ export const projectsData: Project[] = [
     },
     {
         title: "Shiny Umbrella",
-        description: "Desarrollo de una API REST que permite a los usuarios crear y participar en encuestas. Ofrece gestión de perfiles, visualización de resultados y notificaciones sobre la actividad de las encuestas, facilitando la recopilación de datos para la toma de decisiones.",
+        description: "API REST con Django y PostgreSQL para crear y responder encuestas. Ofrece gestión de perfiles, visualización de resultados y notificaciones sobre la actividad de las encuestas. Contenerizada con Docker y con pruebas automatizadas.",
         tech: [
             { "name": "Python", "color": "bg-tech-python" },
             { "name": "Django", "color": "bg-tech-django" },
@@ -76,7 +77,7 @@ export const projectsData: Project[] = [
     },
     {
         title: "ProfeVirtual",
-        description: "Plataforma de gestión de cursos online desarrollada como parte del MVP para NoCountry.tech. Este proyecto fue realizado en colaboración con un equipo multidisciplinario, combinando habilidades de desarrollo backend, diseño de experiencia de usuario y gestión de proyectos, con el objetivo de crear una solución eficiente y escalable para la administración de cursos en línea.",
+        description: "Plataforma de gestión de cursos online, desarrollada como MVP en la simulación laboral de NoCountry.tech con un equipo multidisciplinario y metodología Scrum (Jira). Mi aporte fue la gestión de usuarios, el catálogo de cursos y los endpoints RESTful del backend.",
         tech: [
             { "name": "Python", "color": "bg-tech-python" },
             { "name": "Django", "color": "bg-tech-django" },
@@ -90,9 +91,11 @@ export const projectsData: Project[] = [
             { "name": "Django REST Framework (DRF)", "color": "bg-tech-drf" },
             { "name": "JavaScript", "color": "bg-tech-javascript" },
             { "name": "React", "color": "bg-tech-react" },
-            { "name": "NodeJS", "color": "bg-tech-nodejs" }
+            { "name": "NodeJS", "color": "bg-tech-nodejs" },
+            { "name": "Scrum", "color": "bg-tech-scrum" },
+            { "name": "Jira", "color": "bg-tech-jira" }
         ],        
-        githubLink: "https://github.com/Daniheto/No-Country-Back-End",
+        githubLink: "https://github.com/Daniheto/No-Country-Back-End/pulls?q=is:pr+author:JohannGaviria+is:merged",
         createdAt: new Date('2024-10-31'),
         isCollaborative: true,
         role: "Desarrollador Backend Junior"
@@ -105,8 +108,24 @@ export const workExperienceData: WorkExperience[] = [
         company: "NoCountry.tech",
         logo: "/nocountry.svg",
         position: "Desarrollador Backend Junior",
-        period: "Sep 2024 - Nov 2024",
-        description: "Participé en un equipo multidisciplinario en el desarrollo de ProfeVirtual, un MVP para una plataforma de cursos online. Implementé la gestión de usuarios, el catálogo de cursos y los endpoints RESTful necesarios para la lógica de negocio."
+        period: "5 semanas",
+        description: "Participé en un equipo multidisciplinario remoto que construyó ProfeVirtual, un MVP para una plataforma de cursos online, en un ciclo de cinco semanas con metodología Scrum y seguimiento de tareas en Jira. Desarrollé la gestión de usuarios, el catálogo de cursos y los endpoints RESTful de la lógica de negocio, e integré mi trabajo con el del resto del equipo mediante Git y pull requests.",
+        link: "https://www.nocountry.tech/"
+    },
+    {
+        company: "sloptotal",
+        position: "Colaborador Open Source",
+        description: "Detector open source de texto generado por IA (\"VirusTotal para AI slop\"): analiza texto o URLs con 23 motores independientes que corren localmente en CPU. Contribuí con dos mejoras a la API, ambas mergeadas:",
+        highlights: [
+            "Agrupé los endpoints de la documentación interactiva (/docs) por dominio con tags de OpenAPI y agregué una prueba automatizada que verifica que cada ruta de la API tenga al menos uno.",
+            "Añadí ejemplos de request a los modelos Pydantic para que \"Try it out\" parta con datos de muestra."
+        ],
+        tech: [
+            { name: "Python", color: "bg-tech-python" },
+            { name: "FastAPI", color: "bg-tech-fastapi" },
+            { name: "Pytest", color: "bg-tech-pytest" }
+        ],
+        link: "https://github.com/pablocaeg/sloptotal/pulls?q=is:pr+author:JohannGaviria+is:merged"
     }
 ];
 
@@ -149,5 +168,8 @@ export const skillsData: Skill[] = [
     {name: "CI/CD", color: "bg-tech-githubactions"},
     {name: "Git & GitHub", color: "bg-tech-git"},
     {name: "JWT", color: "bg-tech-jwt"},
-    {name: "Postman", color: "bg-tech-postman"}
+    {name: "Postman", color: "bg-tech-postman"},
+    {name: "Scrum", color: "bg-tech-scrum"},
+    {name: "Kanban", color: "bg-tech-kanban"},
+    {name: "Jira", color: "bg-tech-jira"}
 ];

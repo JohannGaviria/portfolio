@@ -256,24 +256,59 @@ export default function Perfil() {
                                     className="reveal rounded-2xl bg-backgroundCard border border-borderSoft p-6 mb-4 shadow-card"
                                 >
                                     <div className="flex items-center gap-4">
-                                        <img
-                                            src={work.logo}
-                                            alt={work.company}
-                                            width={48}
-                                            height={48}
-                                            className="rounded-lg ring-1 ring-borderSoft"
-                                        />
+                                        {work.logo ? (
+                                            <img
+                                                src={work.logo}
+                                                alt={work.company}
+                                                width={48}
+                                                height={48}
+                                                className="rounded-lg ring-1 ring-borderSoft"
+                                            />
+                                        ) : (
+                                            <div
+                                                aria-hidden="true"
+                                                className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-backgroundSecondary ring-1 ring-borderSoft text-sm font-bold tracking-wide text-accent"
+                                            >
+                                                {work.company.slice(0, 2).toUpperCase()}
+                                            </div>
+                                        )}
                                         <div className="flex flex-col">
                                             <h3 className="text-xl font-semibold text-title">{work.position}</h3>
-                                            <a href='https://www.nocountry.tech/' target='blank' className="text-accent hover:text-accentHover transition-colors duration-150">{work.company}</a>
+                                            {work.link ? (
+                                                <a href={work.link} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accentHover transition-colors duration-150">{work.company}</a>
+                                            ) : (
+                                                <span className="text-accent">{work.company}</span>
+                                            )}
                                         </div>
                                     </div>
                                     <div className="mt-4">
-                                        <div className="flex items-center gap-2 text-text text-sm mt-2 mb-2">
-                                            <Calendar size={15} className="text-accent" />
-                                            <span>{work.period}</span>
-                                        </div>
+                                        {work.period && (
+                                            <div className="flex items-center gap-2 text-text text-sm mt-2 mb-2">
+                                                <Calendar size={15} className="text-accent" />
+                                                <span>{work.period}</span>
+                                            </div>
+                                        )}
                                         <p className="text-text text-sm leading-relaxed">{work.description}</p>
+                                        {work.highlights && (
+                                            <ul className="mt-3 space-y-2">
+                                                {work.highlights.map((highlight) => (
+                                                    <li key={highlight} className="flex gap-2 text-text text-sm leading-relaxed">
+                                                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                                                        <span>{highlight}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                        {work.tech && (
+                                            <div className="mt-4 flex flex-wrap gap-2">
+                                                {work.tech.map((tech) => (
+                                                    <span key={tech.name} className="bg-backgroundSecondary border border-borderSoft inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-title">
+                                                        <span className={`w-1.5 h-1.5 rounded-full ${tech.color}`} aria-hidden="true" />
+                                                        {tech.name}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             ))}

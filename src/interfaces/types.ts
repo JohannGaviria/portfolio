@@ -16,10 +16,13 @@ export interface Project {
 
 export interface WorkExperience {
     company: string;
-    logo: string;
+    logo?: string;
     position: string;
-    period: string;
+    period?: string;
     description: string;
+    link?: string;
+    tech?: Tech[];
+    highlights?: string[];
 }
 
 export interface Education {

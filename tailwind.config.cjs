@@ -52,6 +52,9 @@ module.exports = {
           ddd: '#e67e22',
           swagger: '#6db33f',
           structlog: '#64748b',
+          scrum: '#6d28d9',
+          kanban: '#0284c7',
+          jira: '#0052cc',
         }
       },
       boxShadow: {
