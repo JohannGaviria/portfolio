@@ -118,7 +118,7 @@ export default function Perfil() {
                                 <p className="font-medium text-accent">Desarrollador Backend Junior</p>
                             </div>
                             <p className="text-text text-sm leading-relaxed mb-6">
-                                Especializado en el ecosistema Python (FastAPI, Django) y bases de datos PostgreSQL. Me enfoco en el desarrollo de APIs RESTful escalables aplicando principios de arquitectura limpia y buenas prácticas de diseño. Apasionado por la calidad de código mediante pruebas automatizadas con Pytest y el despliegue con Docker.
+                                Enfocado en el ecosistema Python (FastAPI, Django) y bases de datos PostgreSQL. Motivado por construir APIs robustas aplicando arquitectura limpia (Hexagonal, DDD), código mantenible, pruebas automatizadas con Pytest y despliegue con Docker. Con experiencia práctica en proyectos open source y de simulación laboral.
                             </p>
                             {/* Enlaces de redes sociales */}
                             <div className="flex gap-4 justify-start mb-8">
