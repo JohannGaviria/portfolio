@@ -140,7 +140,7 @@ export default function Perfil() {
                             {/* Botón de contacto */}
                             <button className="w-full bg-accent text-background font-semibold py-2.5 px-6 rounded-lg text-sm tracking-wide hover:bg-accentHover active:scale-[0.97] transition-[background-color,transform] duration-150 ease-out mt-4 mb-6">
                                 <a href="https://cal.com/johanngaviria/15min" target='_blank'>
-                                    CONTACTAME
+                                    CONTÁCTAME
                                 </a>
                             </button>
                         </div>
