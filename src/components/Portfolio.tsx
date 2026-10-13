@@ -138,11 +138,14 @@ export default function Perfil() {
                                 </a>
                             </div>
                             {/* Botón de contacto */}
-                            <button className="w-full bg-accent text-background font-semibold py-2.5 px-6 rounded-lg text-sm tracking-wide hover:bg-accentHover active:scale-[0.97] transition-[background-color,transform] duration-150 ease-out mt-4 mb-6">
-                                <a href="https://cal.com/johanngaviria/15min" target='_blank'>
-                                    CONTÁCTAME
-                                </a>
-                            </button>
+                            <a
+                                href="https://cal.com/johanngaviria/15min"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-center bg-accent text-background font-semibold py-2.5 px-6 rounded-lg text-sm tracking-wide hover:bg-accentHover active:scale-[0.97] transition-[background-color,transform] duration-150 ease-out mt-4 mb-6"
+                            >
+                                CONTÁCTAME
+                            </a>
                         </div>
                     </div>
                     <div className="md:col-span-2 space-y-12">
